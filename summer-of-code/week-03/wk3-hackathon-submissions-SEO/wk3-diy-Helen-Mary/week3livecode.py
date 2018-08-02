@@ -11,16 +11,11 @@ for line in seed:
     print(line)
     GoogleQueries.append('http://www.google.com/search?start=0&num=10&q='+line)
 
-
-#GoogleQueries are already the URLs of Google Searches for each line on seedlist
-print(GoogleQueries)
-
+# Create Google Search URLs for each seed keyword on the list and list as another dataframe
 #https://developers.google.com/custom-search/docs/xml_results
 # Sample Query URL for Google: http://www.google.com/search?start=0&num=10&q=red+sox&output=xml
 
-
-
-# Create Google Search URLs for each seed keyword on the list and list as another dataframe
+print(GoogleQueries)
 
 # Scrape the links from each Google URL (for this use case just first page of results muna)
 
