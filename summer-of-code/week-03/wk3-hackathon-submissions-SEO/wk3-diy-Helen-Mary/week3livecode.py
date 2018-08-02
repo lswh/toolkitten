@@ -1,9 +1,23 @@
 import pandas as pd
 import nltk as nl
 
-# Load seed keywords on a dataframe or list input file: seedlist_clean.csv
-seedlist = pd.read_csv('seedlist_clean.csv')
-print seedlist
+# Load seed keywords on a dataframe or list input file: seedlist.txt
+seed  = open('seedlist.txt', 'r') 
+
+#Initialize 
+GoogleQueries=[]
+
+for line in seed:
+    print(line)
+    GoogleQueries.append('http://www.google.com/search?start=0&num=10&q='+line)
+
+
+#GoogleQueries are already the URLs of Google Searches for each line on seedlist
+print(GoogleQueries)
+
+#https://developers.google.com/custom-search/docs/xml_results
+# Sample Query URL for Google: http://www.google.com/search?start=0&num=10&q=red+sox&output=xml
+
 
 
 # Create Google Search URLs for each seed keyword on the list and list as another dataframe
